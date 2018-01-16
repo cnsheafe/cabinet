@@ -1,0 +1,42 @@
+const path = require('path')
+const webpack = require('webpack')
+const { CheckerPlugin } = require('awesome-typescript-loader')
+
+module.exports = {
+  context: __dirname,
+  entry: ['react-hot-loader/patch', './src/index.tsx'],
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js']
+  },
+  // devtool: 'inline-source-map',
+  devtool: 'eval-source-map',
+  devServer: {
+    contentBase: './dist',
+    hot: true
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'react-hot-loader/webpack'
+          },
+          {
+            loader: 'awesome-typescript-loader'
+          }
+        ]
+      }
+    ]
+  },
+  plugins: [
+    new CheckerPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ]
+}
