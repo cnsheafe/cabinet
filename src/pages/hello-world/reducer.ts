@@ -9,7 +9,7 @@ export interface HelloWorldState extends Record<State> {}
 
 export const createHelloWorldRecord = Record<State>({ counter: 0 })
 
-const reducer: Reducer<HelloWorldState> = (
+const reducer: Reducer<HelloWorldState | undefined> = (
   state = createHelloWorldRecord(),
   action: ValidActions
 ) => {

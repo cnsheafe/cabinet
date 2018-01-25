@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HelloWorldComponent should match the snapshot 1`] = `
+exports[`HelloWorld <HelloWorldComponent /> should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -31,6 +31,7 @@ ShallowWrapper {
           0
         </span>,
       ],
+      "className": "hello-world",
     },
     "ref": null,
     "rendered": Array [
@@ -83,6 +84,7 @@ ShallowWrapper {
             0
           </span>,
         ],
+        "className": "hello-world",
       },
       "ref": null,
       "rendered": Array [
