@@ -7,7 +7,9 @@
   "scripts": {
     "start": "webpack-dev-server --open",
     "build": "webpack",
-    "test": "jest --watchAll",
+    "test": "jest --watch",
+    "posttest": "yarn lint",
+    "lint": "tslint -c tslint.json -p tsconfig.json 'src/**/*.{ts,tsx}'",
     "cover": "jest --coverage"
   },
   "jest": {
@@ -15,7 +17,18 @@
       "^.+\\.tsx?$": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss|sass|less)$": "identity-obj-proxy"
+    },
     "mapCoverage": true,
     "coveragePathIgnorePatterns": [
       "<rootDir>/node_modules/",
@@ -30,6 +43,7 @@
     "@types/react-router-dom": "^4.2.3",
     "@types/redux-immutable": "^3.0.38",
     "immutable": "4.0.0-rc.9",
+    "materialize-css": "^0.100.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
@@ -43,12 +57,17 @@
     "@types/jest": "^22.0.1",
     "@types/react-hot-loader": "^3.0.5",
     "awesome-typescript-loader": "^3.4.1",
+    "css-loader": "^0.28.9",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^22.0.6",
+    "node-sass": "^4.7.2",
     "react-hot-loader": "^3.1.3",
     "react-test-renderer": "^16.2.0",
     "redux-devtools-extension": "^2.13.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
     "ts-jest": "^22.0.1",
     "tslint": "^5.9.1",
     "tslint-react": "^3.4.0",
