@@ -1,5 +1,5 @@
 {
-  "name": "cabinet",
+  "name": "react-ts-starterkit",
   "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
@@ -20,7 +20,8 @@
     "coveragePathIgnorePatterns": [
       "<rootDir>/node_modules/",
       "<rootDir>/src/index.tsx",
-      "<rootDir>/src/router.tsx"    ]
+      "<rootDir>/src/router.tsx"
+    ]
   },
   "dependencies": {
     "@types/react": "^16.0.34",
