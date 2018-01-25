@@ -1,0 +1,1 @@
+modules.export = 'test-file-stub'
