@@ -33,7 +33,9 @@ yarn cover
 - Jest
 - Enzyme
 
+### Webpack Highlights
+- HTMLWebpackPlugin with customizable `template.html`
+- DLL for fast in-between builds
+
 ## Upcoming Additions
-- Webpack HTML Plugin
-- Webpack DLL Plugin
 - Webpack Production Build
