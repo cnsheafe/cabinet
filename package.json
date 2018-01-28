@@ -9,7 +9,7 @@
     "build": "webpack",
     "test": "jest --watch",
     "posttest": "yarn lint",
-    "lint": "tslint -c tslint.json -p tsconfig.json 'src/**/*.{ts,tsx}'",
+    "lint": "tslint -p . -c tslint.json 'src/**/*.{ts,tsx}'",
     "cover": "jest --coverage"
   },
   "jest": {
