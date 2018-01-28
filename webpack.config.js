@@ -45,7 +45,6 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      title: 'React App',
       template: 'src/template.html',
       fileName: 'dist/index.html',
       cache: true,
