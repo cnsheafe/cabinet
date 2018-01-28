@@ -6,11 +6,13 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --open",
-    "build": "webpack",
+    "build": "yarn prestart && webpack",
+    "serve": "serve --port 3000 dist",
     "test": "jest --watch",
     "posttest": "yarn lint",
     "lint": "tslint -p . -c tslint.json 'src/**/*.{ts,tsx}'",
-    "cover": "jest --coverage"
+    "cover": "jest --coverage",
+    "prestart": "webpack --config webpack.vendor.config.js"
   },
   "jest": {
     "transform": {
@@ -68,6 +70,7 @@
     "react-test-renderer": "^16.2.0",
     "redux-devtools-extension": "^2.13.2",
     "sass-loader": "^6.0.6",
+    "serve": "^6.4.9",
     "style-loader": "^0.19.1",
     "ts-jest": "^22.0.1",
     "tslint": "^5.9.1",
