@@ -3,7 +3,7 @@ import { shallow, configure } from 'enzyme'
 import * as Adapter from 'enzyme-adapter-react-16'
 
 import { HelloWorldComponent, mapStateToProps } from '../'
-import { State } from '../../../store'
+import { State } from '../../store'
 import { createHelloWorldRecord as createRecord } from '../reducer'
 configure({ adapter: new Adapter() })
 
