@@ -7,7 +7,7 @@ module.exports = {
   context: __dirname,
   entry: ['react-hot-loader/patch', './src/index.tsx'],
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   resolve: {
