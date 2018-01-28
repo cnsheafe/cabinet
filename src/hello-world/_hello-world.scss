@@ -1,0 +1,9 @@
+@import '../../index';
+
+.hello-world {
+  &__counter {
+    &--red {
+      color: color('red', 'base');
+    }
+  }
+}
