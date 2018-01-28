@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from 'redux'
 import {  devToolsEnhancer } from 'redux-devtools-extension'
 
-import HelloWorldReducer, { HelloWorldState } from './pages/hello-world/reducer'
+import HelloWorldReducer, { HelloWorldState } from './hello-world/reducer'
 
 export interface State {
   helloWorld: HelloWorldState

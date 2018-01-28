@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import HelloWorld from './pages/hello-world'
+import HelloWorld from './hello-world'
 
 export default () => (
   <Router>
