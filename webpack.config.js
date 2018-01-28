@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const { CheckerPlugin } = require('awesome-typescript-loader')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   context: __dirname,
@@ -42,6 +43,15 @@ module.exports = {
   plugins: [
     new CheckerPlugin(),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'React App',
+      template: 'src/template.html',
+      fileName: 'dist/index.html',
+      cache: true,
+      hash: true,
+      minify: false,
+      showErrors: true,
+    }),
   ]
 }
