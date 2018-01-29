@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --open",
-    "build": "yarn prestart && webpack",
+    "build": "webpack --config webpack.prod.config.js",
     "serve": "serve --port 3000 dist",
     "test": "jest --watch",
     "posttest": "yarn lint",
@@ -28,6 +28,7 @@
       "node"
     ],
     "moduleNameMapper": {
+      "^util/(.*)": "<rootDir>/src/util/$1",
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|scss|sass|less)$": "identity-obj-proxy"
     },
@@ -59,9 +60,12 @@
     "@types/jest": "^22.0.1",
     "@types/react-hot-loader": "^3.0.5",
     "awesome-typescript-loader": "^3.4.1",
+    "clean-webpack-plugin": "^0.1.18",
     "css-loader": "^0.28.9",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
     "html-webpack-plugin": "^2.30.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.0.6",
@@ -75,6 +79,7 @@
     "ts-jest": "^22.0.1",
     "tslint": "^5.9.1",
     "tslint-react": "^3.4.0",
+    "uglifyjs-webpack-plugin": "^1.1.6",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.0",
     "webpack-merge": "^4.1.1"

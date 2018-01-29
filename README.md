@@ -24,7 +24,7 @@ yarn cover
 - Typescript
 - Redux
 - Immutable
-- CSS/SCSS Modules
+- CSS/SCSS Modules with BEM utility
 
 ## Dev Tooling
 - Webpack
@@ -35,7 +35,5 @@ yarn cover
 
 ### Webpack Highlights
 - HTMLWebpackPlugin with customizable `template.html`
-- DLL for fast in-between builds
-
-## Upcoming Additions
-- Webpack Production Build
+- DLL and Awesome-Typescript-Loader for fast hot reloading
+- Production build using UglifyJS
