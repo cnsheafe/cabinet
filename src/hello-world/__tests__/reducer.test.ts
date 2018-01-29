@@ -2,7 +2,7 @@ import reducer, {
   createHelloWorldRecord as createRecord,
   HelloWorldState
 } from '../reducer'
-import { Increment } from '../actions'
+import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../contracts'
 
 describe('HelloWorldReducer', () => {
   let initState: HelloWorldState
@@ -19,10 +19,16 @@ describe('HelloWorldReducer', () => {
     testState = reducer(undefined, { type: '' })
     expect(testState).toEqual(createRecord())
   })
-  it('should increase counter by 1 when given Increment action', () => {
-    testState = reducer(initState, Increment())
+  it('should increase counter by 1 when given an action of type INCREMENT_COUNTER', () => {
+    testState = reducer(initState, { type: INCREMENT_COUNTER })
 
     expect(testState).not.toEqual(initState)
     expect(testState && testState.get('counter', 0)).toBe(2)
+  })
+  it('should decrease counter by 1 when give Decrement action', () => {
+    testState = reducer(initState, { type: DECREMENT_COUNTER })
+
+    expect(testState).not.toEqual(initState)
+    expect(testState && testState.get('counter', 0)).toBe(0)
   })
 })
