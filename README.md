@@ -3,9 +3,16 @@ A lean alternative to `create-react-app` for build React apps with Typescript.
 Covers everything from hot-reloading to testing to linting to styles. Also has an open
 configuration policy so you can customize.
 
-## Usage
+
+## Get Started
 ```bash
-git clone https://github.com/cnsheafe/react-ts-starterkit.git
+// Navigate to your project dir
+cd my-react-project-dir
+// Initialize git
+git init
+// Copy the starterkit from Github
+git pull https://github.com/cnsheafe/react-ts-starterkit.git
+// Get all the npm packages
 yarn install
 // Fire up the dev-server!
 yarn start
