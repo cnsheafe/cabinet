@@ -1,5 +1,10 @@
 {
     "prettier.semi": false,
     "prettier.singleQuote": true,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "editor.wordWrapColumn": 100,
+    "prettier.arrowParens": "avoid",
+    "prettier.bracketSpacing": true,
+    "editor.trimAutoWhitespace": true,
+    "prettier.proseWrap": "preserve",
 }
