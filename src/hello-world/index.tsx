@@ -2,16 +2,17 @@ import * as React from 'react'
 import { ActionCreator } from 'redux'
 import { MapStateToProps, MapDispatchToProps, connect } from 'react-redux'
 
-import { Increment, Decrement, IncrementCounter, DecrementCounter } from './actions'
+import { Increment, Decrement } from './actions'
+import { IncrementCounter, DecrementCounter } from './contracts'
 import { State } from 'store'
 import { BEM } from 'util/bem'
 import './_hello-world.scss'
 
-interface StateProps {
+export interface StateProps {
   counter: number
 }
 
-interface DispatchProps {
+export interface DispatchProps {
   inc: ActionCreator<IncrementCounter>,
   dec: ActionCreator<DecrementCounter>,
 }
