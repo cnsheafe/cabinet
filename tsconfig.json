@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "util": ["util"],
+    },
     "outDir": "dist",
     "module": "esnext",
     "target": "es5",
