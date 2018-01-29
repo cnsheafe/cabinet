@@ -1,19 +1,11 @@
 const path = require('path')
 const webpack = require('webpack')
-const { CheckerPlugin } = require('awesome-typescript-loader')
+const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const common = require('./webpack.common')
 
-module.exports = {
-  context: __dirname,
+module.exports = merge(common, {
   entry: ['react-hot-loader/patch', './src/index.tsx'],
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  },
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js']
-  },
-  // devtool: 'inline-source-map',
   devtool: 'eval-source-map',
   devServer: {
     contentBase: './dist',
@@ -25,24 +17,19 @@ module.exports = {
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: 'react-hot-loader/webpack'
-          },
-          {
-            loader: 'awesome-typescript-loader'
-          }
+        include: /src/,
+        use: ['react-hot-loader/webpack', 'awesome-typescript-loader'
         ]
       },
       {
         test: /\.scss$/,
         exclude: /node_modules/,
+        include: /src/,
         use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
   plugins: [
-    new CheckerPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
@@ -58,4 +45,4 @@ module.exports = {
       manifest: require('./dist/vendor-manifest.json'),
     })
   ]
-}
+})
