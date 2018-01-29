@@ -6,6 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
     counter={0}
+    dec={[MockFunction]}
     inc={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -25,7 +26,7 @@ ShallowWrapper {
           className="hello-world__btn"
           onClick={[Function]}
         >
-          Increment
+          +
         </button>,
         <span
           className="hello-world__counter--red"
@@ -33,6 +34,11 @@ ShallowWrapper {
           Counter: 
           0
         </span>,
+        <button
+          onClick={[Function]}
+        >
+          -
+        </button>,
       ],
       "className": "hello-world",
     },
@@ -43,12 +49,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Increment",
+          "children": "+",
           "className": "hello-world__btn",
           "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Increment",
+        "rendered": "+",
         "type": "button",
       },
       Object {
@@ -69,6 +75,18 @@ ShallowWrapper {
         ],
         "type": "span",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "-",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "-",
+        "type": "button",
+      },
     ],
     "type": "div",
   },
@@ -83,7 +101,7 @@ ShallowWrapper {
             className="hello-world__btn"
             onClick={[Function]}
           >
-            Increment
+            +
           </button>,
           <span
             className="hello-world__counter--red"
@@ -91,6 +109,11 @@ ShallowWrapper {
             Counter: 
             0
           </span>,
+          <button
+            onClick={[Function]}
+          >
+            -
+          </button>,
         ],
         "className": "hello-world",
       },
@@ -101,12 +124,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Increment",
+            "children": "+",
             "className": "hello-world__btn",
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Increment",
+          "rendered": "+",
           "type": "button",
         },
         Object {
@@ -126,6 +149,18 @@ ShallowWrapper {
             0,
           ],
           "type": "span",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "-",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "-",
+          "type": "button",
         },
       ],
       "type": "div",

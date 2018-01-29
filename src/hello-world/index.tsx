@@ -2,9 +2,9 @@ import * as React from 'react'
 import { ActionCreator } from 'redux'
 import { MapStateToProps, MapDispatchToProps, connect } from 'react-redux'
 
-import { Increment, IncrementCounter } from './actions'
-import { State } from '../store'
-import { BEM } from '../util/bem'
+import { Increment, Decrement, IncrementCounter, DecrementCounter } from './actions'
+import { State } from 'store'
+import { BEM } from 'util/bem'
 import './_hello-world.scss'
 
 interface StateProps {
@@ -12,18 +12,21 @@ interface StateProps {
 }
 
 interface DispatchProps {
-  inc: ActionCreator<IncrementCounter>
+  inc: ActionCreator<IncrementCounter>,
+  dec: ActionCreator<DecrementCounter>,
 }
 
 export const HelloWorldComponent = ({
   counter,
-  inc
+  inc,
+  dec
 }: StateProps & DispatchProps) => {
   const cn = new BEM('hello-world')
   return (
     <div className={cn.b()}>
-      <button className={cn.e('btn')} onClick={() => inc()}>Increment</button>
+      <button className={cn.e('btn')} onClick={() => inc()}>+</button>
       <span className={cn.e('counter', 'red')}>Counter: {counter}</span>
+      <button onClick={() => dec()}>-</button>
     </div>
   )
 }
@@ -33,7 +36,8 @@ export const mapStateToProps: MapStateToProps<StateProps, {}, State> = state => 
 })
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, State> = {
-  inc: Increment
+  dec: Decrement,
+  inc: Increment,
 }
 
 const connected = connect(mapStateToProps, mapDispatchToProps)(

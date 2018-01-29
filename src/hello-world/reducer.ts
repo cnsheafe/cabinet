@@ -1,6 +1,6 @@
 import { Record } from 'immutable'
 import { Reducer } from 'redux'
-import { INCREMENT_COUNTER, ValidActions } from './actions'
+import { INCREMENT_COUNTER, ValidActions, DECREMENT_COUNTER } from './actions'
 
 interface State {
   counter: number
@@ -16,6 +16,8 @@ const reducer: Reducer<HelloWorldState | undefined> = (
   switch (action.type) {
     case INCREMENT_COUNTER:
       return state.update('counter', counter => counter + 1)
+    case DECREMENT_COUNTER:
+      return state.update('counter', counter => counter - 1)
     default:
       return state
   }
