@@ -1,7 +1,8 @@
 import { Record } from 'immutable'
 import { Reducer } from 'redux'
-import { INCREMENT_COUNTER, ValidActions, DECREMENT_COUNTER } from './actions'
+import { INCREMENT_COUNTER, DECREMENT_COUNTER, IncrementCounter, DecrementCounter } from './contracts'
 
+type ValidActions = IncrementCounter | DecrementCounter
 interface State {
   counter: number
 }
