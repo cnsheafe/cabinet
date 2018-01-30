@@ -22,11 +22,17 @@ jobs:
           key: v1-dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - repo
+            - node_modules
   test:
     <<: *defaults
     steps:
-      - checkout
-
+      - attach_workspace:
+        at: ~/
+      # - checkout
       - run: 
           name: test
           command: yarn jest && yarn lint
