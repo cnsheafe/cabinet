@@ -32,7 +32,6 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
-      # - checkout
       - run: 
           name: test
           command: yarn jest && yarn lint
@@ -44,12 +43,17 @@ workflows:
       - test:
           requires:
             - build
-  # nightly:
-  #   triggers:
-  #     - schedule:
-  #       cron: "0 0 * * *"
-  #       filters:
-  #         branches:
-  #           only:
-  #             - master
+  weekly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * 0"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
 
