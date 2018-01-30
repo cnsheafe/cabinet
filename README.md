@@ -37,3 +37,4 @@ yarn cover
 - HTMLWebpackPlugin with customizable `template.html`
 - DLL and Awesome-Typescript-Loader for fast hot reloading
 - Production build using UglifyJS
+
