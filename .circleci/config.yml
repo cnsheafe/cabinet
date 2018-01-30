@@ -16,8 +16,11 @@ jobs:
       - run: yarn install
 
       - save_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
           paths:
             - node_modules
-          keys: v1-dependencies-{{ checksum "package.json" }}
+
 
       - run: yarn test
