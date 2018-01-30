@@ -25,6 +25,8 @@ jobs:
   test:
     <<: *defaults
     steps:
+      - checkout
+
       - run: 
           name: test
           command: yarn jest && yarn lint
