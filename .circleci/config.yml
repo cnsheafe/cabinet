@@ -21,4 +21,6 @@ jobs:
             - node_modules
 
 
-      - run: yarn jest
+      - run: 
+        - yarn jest
+        - yarn lint
